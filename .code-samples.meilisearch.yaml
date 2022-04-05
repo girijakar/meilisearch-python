@@ -177,10 +177,6 @@ filtering_guide_2: |-
     'filters': 'release_date > 795484800 AND (director = "Tim Burton" OR director = "Christopher Nolan")'
   })
 filtering_guide_3: |-
-  client.index('movies').search('horror', {
-    'filters': 'director = "Jordan Peele"'
-  })
-filtering_guide_4: |-
   client.index('movies').search('Planet of the Apes', {
     'filters': 'rating >= 3 AND (NOT director = "Tim Burton")'
   })
@@ -206,14 +202,6 @@ search_parameter_guide_crop_1: |-
 search_parameter_guide_highlight_1: |-
   client.index('movies').search('shifu', {
     'attributesToHighlight': ['overview']
-  })
-search_parameter_guide_filter_1: |-
-  client.index('movies').search('n', {
-    'filters': 'title = Nightshift'
-  })
-search_parameter_guide_filter_2: |-
-  client.index('movies').search('n', {
-    'filters': 'title = "Kung Fu Panda"'
   })
 search_parameter_guide_matches_1: |-
   client.index('movies').search('n', {
@@ -275,15 +263,6 @@ documents_guide_add_movie_1: |-
     'movie_id': '123sq178',
     'title': 'Amélie Poulain'
   }])
-search_guide_1: |-
-  client.index('movies').search('shifu', {
-    'limit': 5,
-    'offset': 10
-  })
-search_guide_2: |-
-  client.index('movies').search('Avengers', {
-    'filters': 'release_date > 795484800'
-  })
 getting_started_add_documents_md: |-
   ```bash
   pip3 install meilisearch
@@ -330,10 +309,6 @@ faceted_search_walkthrough_attributes_for_faceting_1: |-
 faceted_search_walkthrough_facet_filters_1: |-
   client.index('movies').search('thriller', {
     'facetFilters': [['genres:Horror', 'genres:Mystery'], 'director:Jordan Peele']
-  })
-faceted_search_walkthrough_facets_distribution_1: |-
-  client.index('movies').search('Batman', {
-    'facetsDistribution': ['genres']
   })
 post_dump_1: |-
   client.create_dump()
